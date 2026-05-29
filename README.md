@@ -66,3 +66,5 @@ The pipeline checks structural code formatting compliance (terraform fmt), valid
 Least-Privilege Network Access: Security Groups form a strict firewall perimeter. The backend compute instances accept traffic only when routed directly through the Application Load Balancer. The Redis cluster accepts requests only from the backend application instances.
 
 IAM Controls: Instances use a dedicated IAM profile mapped with strict CloudWatchAgentServerPolicy parameters to isolate logging mechanisms without granting wider account privileges.
+
+........................................................................................................................................................
