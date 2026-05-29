@@ -1,0 +1,11 @@
+# Query 1: Filter system logs for runtime application exceptions
+fields @timestamp, @message, level, status
+| filter level = "error" or status >= 400
+| sort @timestamp desc
+| limit 50
+
+# Query 2: Track end-user traffic latency statistics across the Go API routes
+fields @timestamp, @message, method, path, latency
+| filter path like "/api/"
+| stats avg(latency), max(latency) by path, method
+| sort avg(latency) desc
