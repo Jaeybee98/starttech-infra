@@ -1,0 +1,10 @@
+# Local cloud provider cache downloads
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+
+# Credentials or local vars (if any)
+*.tfvars
+*.tfvars.json
