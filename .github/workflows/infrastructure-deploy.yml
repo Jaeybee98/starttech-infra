@@ -51,3 +51,7 @@ jobs:
       # 7. Generate a dry-run execution blueprint
       - name: Terraform Plan
         run: cd terraform && terraform plan -no-color
+      
+      # 8. Auto-Approve Apply
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
