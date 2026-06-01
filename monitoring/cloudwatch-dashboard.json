@@ -1,0 +1,26 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0, "y": 0, "width": 12, "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/EC2", "CPUUtilization", "AutoScalingGroupName", "starttech-asg" ]
+        ],
+        "period": 300, "stat": "Average", "region": "us-east-1",
+        "title": "Backend Cluster CPU Infrastructure Load"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12, "y": 0, "width": 12, "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/ApplicationELB", "HealthyHostCount", "TargetGroup", "starttech-backend-tg" ]
+        ],
+        "period": 60, "stat": "Average", "region": "us-east-1",
+        "title": "Active Target Group Node Capacities"
+      }
+    }
+  ]
+}

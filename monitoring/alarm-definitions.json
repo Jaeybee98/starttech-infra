@@ -1,14 +1,25 @@
-{
-  "Alarms": [
-    {
-      "AlarmName": "starttech-high-cpu-alarm",
-      "MetricName": "CPUUtilization",
-      "Namespace": "AWS/EC2",
-      "Statistic": "Average",
-      "Period": 300,
-      "EvaluationPeriods": 2,
-      "Threshold": 80.0,
-      "ComparisonOperator": "GreaterThanOrEqualToThreshold"
-    }
-  ]
-}
+[
+  {
+    "AlarmName": "starttech-asg-high-cpu",
+    "MetricName": "CPUUtilization",
+    "Namespace": "AWS/EC2",
+    "Statistic": "Average",
+    "Period": 300,
+    "EvaluationPeriods": 2,
+    "Threshold": 80.0,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "Dimensions": [{ "Name": "AutoScalingGroupName", "Value": "starttech-asg" }],
+    "AlarmDescription": "Triggers when ASG clusters exceed 80% CPU capacity."
+  },
+  {
+    "AlarmName": "starttech-alb-unhealthy-hosts",
+    "MetricName": "UnHealthyHostCount",
+    "Namespace": "AWS/ApplicationELB",
+    "Statistic": "Average",
+    "Period": 60,
+    "EvaluationPeriods": 1,
+    "Threshold": 1.0,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "AlarmDescription": "Triggers immediately if any backend target node fails its health check."
+  }
+]
